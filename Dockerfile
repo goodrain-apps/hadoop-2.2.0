@@ -12,7 +12,7 @@ ENV HADOOP_HOME=/usr/local/hadoop-$HADOOP_VERSION
 RUN mkdir -p "${HADOOP_HOME}" \
   && export ARCHIVE=hadoop-$HADOOP_VERSION.tar.gz \
   && export DOWNLOAD_PATH=apache/hadoop/common/hadoop-$HADOOP_VERSION/$ARCHIVE \
-  && curl -sSL https://mirrors.ocf.berkeley.edu/$DOWNLOAD_PATH | \
+  && curl -sSL https://mirrors.tuna.tsinghua.edu.cn/$DOWNLOAD_PATH | \
     tar -xz -C $HADOOP_HOME --strip-components 1 \
   && rm -rf $ARCHIVE
 
