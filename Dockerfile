@@ -7,8 +7,6 @@ ENV HADOOP_VERSION=2.8.0
 # Set home
 ENV HADOOP_HOME=/usr/local/hadoop-$HADOOP_VERSION
 
-# Install dependencies
-RUN apk add --no-cache netcat
 
 # Install Hadoop
 RUN mkdir -p "${HADOOP_HOME}" \
