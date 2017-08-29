@@ -46,7 +46,7 @@ COPY start-hadoop-datanode /opt/util/bin/start-hadoop-datanode
 ENV PATH=$PATH:/opt/util/bin
 
 # Fix environment for other users
-RUN echo "export HADOOP_HOME=$HADOOP_HOME" > /etc/bash.bashrc.tmp \
+RUN touch /etc/bash.bashrc && echo "export HADOOP_HOME=$HADOOP_HOME" > /etc/bash.bashrc.tmp \
   && echo 'export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:/opt/util/bin'>> /etc/bash.bashrc.tmp \
   && cat /etc/bash.bashrc >> /etc/bash.bashrc.tmp \
   && mv -f /etc/bash.bashrc.tmp /etc/bash.bashrc
